@@ -91,7 +91,11 @@ function ProductsPage() {
             key={product.id}
             className="bg-neutral-900 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition duration-300"
           >
-            <img src={product.image} alt={product.name} className="w-full h-72 object-cover" />
+            <img
+              src={product.image}
+              alt={product.name}
+              className="w-full h-72 object-cover"
+            />
             <div className="p-4">
               <h3 className="text-xl font-bold mb-2">{product.name}</h3>
               <p className="text-lg text-yellow-400 mb-2">EGP {product.price}</p>
@@ -100,7 +104,9 @@ function ProductsPage() {
                   <span
                     key={size}
                     className={`px-3 py-1 rounded-full text-sm border ${
-                      stock === 0 ? "border-red-500 text-red-500" : "border-green-500 text-green-500"
+                      stock === 0
+                        ? "border-red-500 text-red-500"
+                        : "border-green-500 text-green-500"
                     }`}
                   >
                     {size} ({stock})
@@ -139,7 +145,10 @@ function ProductsPage() {
       )}
 
       {showCustomerForm && (
-        <form onSubmit={handleSubmitCustomer} className="mt-8 max-w-md mx-auto bg-neutral-800 p-6 rounded-xl">
+        <form
+          onSubmit={handleSubmitCustomer}
+          className="mt-8 max-w-md mx-auto bg-neutral-800 p-6 rounded-xl"
+        >
           <h4 className="text-lg font-bold mb-4 text-center">Customer Info</h4>
           <input
             type="text"
@@ -172,7 +181,10 @@ function ProductsPage() {
             onChange={(e) => setCustomerInfo({ ...customerInfo, email: e.target.value })}
             className="w-full mb-3 px-4 py-2 rounded bg-neutral-700 text-white"
           />
-          <button type="submit" className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded">
+          <button
+            type="submit"
+            className="w-full bg-green-500 hover:bg-green-600 text-white py-2 rounded"
+          >
             Confirm Order
           </button>
         </form>
